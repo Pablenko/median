@@ -7,7 +7,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
 file(GLOB median_tests_src "*.hpp" "*.cpp")
-list(REMOVE_ITEM median_tests_src ${CMAKE_SOURCE_DIR}/src/main.cpp)
+list(REMOVE_ITEM median_srcs ${CMAKE_SOURCE_DIR}/src/main.cpp)
 
-add_executable(median_tests ${median_tests_src})
+add_executable(median_tests ${median_tests_src} ${median_srcs})
 target_link_libraries(median_tests ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
