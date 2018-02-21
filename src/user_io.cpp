@@ -4,19 +4,17 @@
 
 #include "user_io.hpp"
 
+void validate(const std::string& input)
+{
+}
+
 std::pair<std::vector<int>, std::vector<int>> parse_input(const std::string& input)
 {
     const char break_marker = 'm';
-    std::vector<int> values;
-    std::vector<int> break_positions;
-
     const std::size_t last_break_pos = input.rfind(break_marker);
 
-    if(last_break_pos == std::string::npos)
-    {
-        throw std::runtime_error("Error! Improper input format - lack of last m character!");
-    }
-
+    std::vector<int> values;
+    std::vector<int> break_positions;
     std::size_t current_pos = 0, break_pos = 0;
 
     do
