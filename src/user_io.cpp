@@ -4,8 +4,15 @@
 
 #include "user_io.hpp"
 
-void validate(const std::string& input)
+bool validate(const std::string& input)
 {
+    const char break_marker = 'm', quit_marker = 'q';
+
+    if((input.find(break_marker) == std::string::npos) or (input.find(quit_marker) == std::string::npos))
+    {
+        return false;
+    }
+    return true;
 }
 
 std::pair<std::vector<int>, std::vector<int>> parse_input(const std::string& input)

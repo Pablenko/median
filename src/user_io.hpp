@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-void validate(const std::string& input);
+bool validate(const std::string& input);
 
 std::pair<std::vector<int>, std::vector<int>> parse_input(const std::string& input);
 

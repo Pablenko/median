@@ -2,6 +2,13 @@
 
 #include "user_io.hpp"
 
+TEST(user_io_tests, validate_input)
+{
+	EXPECT_TRUE(validate("1 m q"));
+	EXPECT_FALSE(validate("1 m"));
+	EXPECT_FALSE(validate("1 m 2 m"));
+}
+
 TEST(user_io_tests, parse_user_input)
 {
 	std::string input = "1 m 2 m 3 4 m q";
