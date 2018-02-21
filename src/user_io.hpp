@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
-std::pair<std::vector<int>, std::vector<int>> transform_input(const std::string& input);
+std::pair<std::vector<int>, std::vector<int>> parse_input(const std::string& input);
+
+std::string result_to_str(const std::vector<float>& medians);
 
 #endif
