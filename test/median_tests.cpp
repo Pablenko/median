@@ -6,15 +6,13 @@ TEST(median_tests, median_alg_tests)
 {
 	/*std::string input = "3 5 m 8 m 6 m q";
 
-	float* result = nullptr;
+	float result[100] = {};
 	unsigned int result_size = median(input, result);
 
 	EXPECT_EQ(3, result_size);
 	EXPECT_FLOAT_EQ(4.0, result[0]);
 	EXPECT_FLOAT_EQ(5.0, result[1]);
-	EXPECT_FLOAT_EQ(5.5, result[2]);
-
-	delete[] result;*/
+	EXPECT_FLOAT_EQ(5.5, result[2]);*/
 }
 
 TEST(median_tests, one_break)

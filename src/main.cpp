@@ -17,12 +17,10 @@ int main()
     	return 1;
     }
 
-    float* results = nullptr;
+    float results[100] = {};
 
     unsigned int results_size = median(input, results);
     auto results_repr = result_to_str(results, results_size);
 
     std::cout << "\nResult: \n" << results_repr << "\n";
-
-    delete[] results;
 }

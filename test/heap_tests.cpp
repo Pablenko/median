@@ -52,6 +52,16 @@ TEST(heap_tests, pop)
 	EXPECT_EQ(2, h.top());
 }
 
+TEST(heap_tests, pop_1_elem)
+{
+	max_heap h(10);
+
+	h.insert(1);
+
+	EXPECT_EQ(1, h.pop());
+	EXPECT_EQ(0, h.size());
+}
+
 TEST(heap_tests, maintain_size)
 {
 	max_heap h(1);

@@ -1,12 +1,12 @@
 #ifndef HEAP_HPP
 #define HEAP_HPP
 
-bool less(int a, int b)
+inline bool less(int a, int b)
 {
 	return a < b;
 }
 
-bool greater(int a, int b)
+inline bool greater(int a, int b)
 {
 	return a > b;
 }
@@ -60,7 +60,7 @@ private:
         unsigned int r = right(pos);
         unsigned int change_pos = 0;
 
-        if( (l <= size_ - 1) and compare(data[l], data[pos]) )
+        if( (l <= size_ - 1) and (compare(data[l], data[pos])) )
         {
         	change_pos = l;
         }
