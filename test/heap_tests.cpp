@@ -25,8 +25,10 @@ TEST(heap_tests, min_heap)
 	h.insert(1);
 	h.insert(2);
 	h.insert(3);
+	h.insert(0);
+	h.insert(-1);
 
-	EXPECT_EQ(1, h.top());
+	EXPECT_EQ(-1, h.top());
 }
 
 TEST(heap_tests, max_heap)
@@ -36,8 +38,10 @@ TEST(heap_tests, max_heap)
 	h.insert(1);
 	h.insert(2);
 	h.insert(3);
+	h.insert(0);
+	h.insert(5);
 
-	EXPECT_EQ(3, h.top());
+	EXPECT_EQ(5, h.top());
 }
 
 TEST(heap_tests, pop)

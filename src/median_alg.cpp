@@ -1,3 +1,4 @@
+#include <limits>
 #include <sstream>
 
 #include "heap.hpp"
@@ -7,7 +8,7 @@ static float calculate_current_median(min_heap& min_h, max_heap& max_h)
 {
     if(min_h.size() == 0 and max_h.size() == 0)
     {
-        return 0.0f;
+        return std::numeric_limits<float>::max();
     }
     else if(min_h.size() > max_h.size())
     {
@@ -88,8 +89,8 @@ unsigned int median(const std::string& input, float* out)
     const char end_marker = 'q';
 
     unsigned int results_size = 0;
-    max_heap max_h(100);
-    min_heap min_h(100);
+    max_heap max_h(200);
+    min_heap min_h(200);
     std::istringstream ss(input);
 
     while(ss)
@@ -100,7 +101,11 @@ unsigned int median(const std::string& input, float* out)
         }
         else if(ss.peek() == break_marker)
         {
-            out[results_size++] = calculate_current_median(min_h, max_h);
+            float result =  calculate_current_median(min_h, max_h);
+            if(result != std::numeric_limits<float>::max())
+            {
+                out[results_size++] = result;
+            }
             ss.get();
         }
         else
@@ -108,6 +113,7 @@ unsigned int median(const std::string& input, float* out)
             int current_value = 0;
             ss >> current_value;
             update_heaps(min_h, max_h, current_value);
+            ss.get(); // remove empty space
         }
     }
     return results_size;

@@ -22,14 +22,15 @@ struct heap
 	{
 		if(size_ < capacity)
 		{
-			data[size_++] = value;
+			data[size_++] = data[0];
+            data[0] = value;
 			heapify(0);
 		}
 	}
 
 	int pop()
 	{
-		if(size_ > 0)
+		if(size_ > 1)
 		{
 			int popped = data[0];
 			data[0] = data[size_ - 1];
@@ -37,6 +38,13 @@ struct heap
 			heapify(0);
 			return popped;
 		}
+        else if(size_ == 1)
+        {
+            int popped = data[0];
+            size_ = 0;
+            data[0] = 0;
+            return popped;
+        }
 		else
 		{
 			return 0;
@@ -60,7 +68,7 @@ private:
         unsigned int r = right(pos);
         unsigned int change_pos = 0;
 
-        if( (l <= size_ - 1) and (compare(data[l], data[pos])) )
+        if( l <= (size_ - 1) and compare(data[l], data[pos])) 
         {
         	change_pos = l;
         }
