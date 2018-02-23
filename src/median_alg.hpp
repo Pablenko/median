@@ -2,9 +2,7 @@
 #define MEDIAN_ALG_HPP
 
 #include <string>
-#include <utility>
-#include <vector>
 
-std::vector<float> median(const std::vector<int>& values, const std::vector<int>& breaks);
+unsigned int median(const std::string& input, float* out);
 
 #endif

@@ -17,9 +17,12 @@ int main()
     	return 1;
     }
 
-    auto parsed = parse_input(input);
-    auto result = median(parsed.first, parsed.second);
-    auto output = result_to_str(result);
+    float* results = nullptr;
 
-    std::cout << "\nResult: \n" << output << "\n";
+    unsigned int results_size = median(input, results);
+    auto results_repr = result_to_str(results, results_size);
+
+    std::cout << "\nResult: \n" << results_repr << "\n";
+
+    delete[] results;
 }

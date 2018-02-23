@@ -2,12 +2,9 @@
 #define USER_IO_HPP
 
 #include <string>
-#include <vector>
 
 bool validate(const std::string& input);
 
-std::pair<std::vector<int>, std::vector<int>> parse_input(const std::string& input);
-
-std::string result_to_str(const std::vector<float>& medians);
+std::string result_to_str(const float* medians, const unsigned int size);
 
 #endif
